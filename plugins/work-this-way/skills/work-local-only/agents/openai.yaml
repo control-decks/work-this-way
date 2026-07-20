@@ -1,0 +1,4 @@
+interface:
+  display_name: "Local Only"
+  short_description: "Keep work on local resources"
+  default_prompt: "Use $work-local-only to block external access."

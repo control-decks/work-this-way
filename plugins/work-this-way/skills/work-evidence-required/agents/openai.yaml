@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evidence Required"
+  short_description: "Require evidence for dependent work"
+  default_prompt: "Use $work-evidence-required to require supporting evidence."

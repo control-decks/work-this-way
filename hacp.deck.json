@@ -1,0 +1,90 @@
+{
+  "hacp": "0.3",
+  "deck": {"id": "work-this-way", "version": "0.1.0", "publisher": "Control Decks"},
+  "cards": [
+    {
+      "id": "work-this-way/read-only",
+      "command": "work-read-only",
+      "kind": "control",
+      "mode": "guard",
+      "traits": ["session-control", "refusal", "mutation-guard"],
+      "defaultBinding": "session",
+      "accepts": ["*"],
+      "produces": ["work-this-way/control-state", "blocked"],
+      "duration": "until-clear",
+      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/work-clear"], "blocksTraits": ["mutation"]}
+    },
+    {
+      "id": "work-this-way/ask-first",
+      "command": "work-ask-first",
+      "kind": "control",
+      "mode": "guard",
+      "traits": ["session-control", "approval-gate", "mutation-guard"],
+      "defaultBinding": "session",
+      "accepts": ["*"],
+      "produces": ["work-this-way/control-state", "pending"],
+      "duration": "until-clear",
+      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/work-clear"], "gatesTraits": ["mutation"]}
+    },
+    {
+      "id": "work-this-way/local-only",
+      "command": "work-local-only",
+      "kind": "control",
+      "mode": "guard",
+      "traits": ["session-control", "refusal", "external-access-guard"],
+      "defaultBinding": "session",
+      "accepts": ["*"],
+      "produces": ["work-this-way/control-state", "blocked"],
+      "duration": "until-clear",
+      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/work-clear"], "blocksTraits": ["external-access"]}
+    },
+    {
+      "id": "work-this-way/evidence-required",
+      "command": "work-evidence-required",
+      "kind": "control",
+      "mode": "guard",
+      "traits": ["session-control", "evidence-gate"],
+      "defaultBinding": "session",
+      "accepts": ["*"],
+      "produces": ["work-this-way/control-state", "blocked"],
+      "duration": "until-clear",
+      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/work-clear"], "acceptsTraits": ["evidence-annotation"]}
+    },
+    {
+      "id": "work-this-way/once",
+      "command": "work-once",
+      "kind": "control",
+      "mode": "qualify",
+      "traits": ["duration-qualifier"],
+      "defaultBinding": "same-combo-controls",
+      "accepts": ["work-this-way/control-state"],
+      "produces": ["work-this-way/control-state"],
+      "duration": "one-shot",
+      "relations": {"qualifiesTraits": ["session-control"], "setsDuration": "one-turn"}
+    },
+    {
+      "id": "work-this-way/work-clear",
+      "command": "work-clear",
+      "kind": "control",
+      "mode": "clear",
+      "traits": ["deck-clear", "mutation-safe"],
+      "defaultBinding": "work-this-way/control-state",
+      "accepts": ["*"],
+      "produces": ["work-this-way/control-state"],
+      "duration": "one-shot",
+      "relations": {"clearsDeck": "work-this-way"}
+    },
+    {
+      "id": "work-this-way/implement",
+      "command": "work-implement",
+      "kind": "operation",
+      "mode": "action",
+      "traits": ["mutation"],
+      "defaultBinding": "current-action-or-plan",
+      "accepts": ["content", "think-it-through/plan", "reality-check/annotated"],
+      "produces": ["work-this-way/implementation-result"],
+      "duration": "one-shot",
+      "relations": {"blockedByTraits": ["mutation-guard", "external-access-guard", "evidence-gate"], "presentedBy": ["think-it-through/explain"]}
+    }
+  ]
+}

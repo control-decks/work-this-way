@@ -1,0 +1,22 @@
+{
+  "name": "work-this-way",
+  "version": "0.1.0",
+  "description": "Visible, composable controls for how an agent works in the current session.",
+  "author": {
+    "name": "thevzion",
+    "url": "https://github.com/thevzion"
+  },
+  "homepage": "https://github.com/control-decks/work-this-way",
+  "repository": "https://github.com/control-decks/work-this-way",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Work This Way",
+    "shortDescription": "Set visible session controls for agent work.",
+    "longDescription": "Activate, qualify, clear, and obey composable HACP controls such as READ ONLY, ASK FIRST, LOCAL ONLY, and EVIDENCE REQUIRED.",
+    "developerName": "Control Decks",
+    "category": "Productivity",
+    "capabilities": ["Session controls", "Mutation approval", "Local-only work", "Implementation"],
+    "defaultPrompt": "Use Work This Way to control how you work in this session."
+  }
+}
