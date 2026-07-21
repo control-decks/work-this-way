@@ -1,0 +1,4 @@
+interface:
+  display_name: "Work This Way"
+  short_description: "Initialize the shared work-control deck"
+  default_prompt: "Use $deck to initialize Work This Way."

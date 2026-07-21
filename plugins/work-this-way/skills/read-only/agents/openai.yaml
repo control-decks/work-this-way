@@ -1,0 +1,4 @@
+interface:
+  display_name: "Work This Way · Read Only"
+  short_description: "Block mutation until explicitly cleared"
+  default_prompt: "Use $read-only to keep this session read-only."

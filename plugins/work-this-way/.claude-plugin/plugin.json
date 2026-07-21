@@ -1,6 +1,6 @@
 {
   "name": "work-this-way",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Visible, composable controls for how an agent works in the current session.",
   "author": {"name": "thevzion", "url": "https://github.com/thevzion"},
   "homepage": "https://github.com/control-decks/work-this-way",

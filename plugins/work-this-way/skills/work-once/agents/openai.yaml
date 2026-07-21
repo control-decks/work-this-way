@@ -1,4 +1,0 @@
-interface:
-  display_name: "Once"
-  short_description: "Limit new controls to one turn"
-  default_prompt: "Use $work-once with controls for one completed turn."

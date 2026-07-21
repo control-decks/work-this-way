@@ -1,6 +1,6 @@
 {
   "name": "work-this-way",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Visible, composable controls for how an agent works in the current session.",
   "author": {
     "name": "thevzion",
@@ -17,6 +17,10 @@
     "developerName": "Control Decks",
     "category": "Productivity",
     "capabilities": ["Session controls", "Mutation approval", "Local-only work", "Implementation"],
-    "defaultPrompt": "Use Work This Way to control how you work in this session."
+    "defaultPrompt": [
+      "$work-this-way:help Help me choose a work card.",
+      "$work-this-way:read-only Keep this work read-only.",
+      "$work-this-way:implement Execute the current actionable direction."
+    ]
   }
 }

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Work Clear"
-  short_description: "Clear active work controls"
-  default_prompt: "Use $work-clear to clear Work This Way controls."

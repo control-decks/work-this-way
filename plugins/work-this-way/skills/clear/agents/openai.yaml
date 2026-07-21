@@ -1,0 +1,4 @@
+interface:
+  display_name: "Work This Way · Clear"
+  short_description: "Clear active Work This Way controls"
+  default_prompt: "Use $clear to clear Work This Way controls."

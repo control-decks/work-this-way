@@ -1,4 +1,0 @@
-interface:
-  display_name: "Implement"
-  short_description: "Execute the current actionable direction"
-  default_prompt: "Use $work-implement to execute the current actionable direction."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Work This Way · Help"
+  short_description: "Choose a work control or action card"
+  default_prompt: "Use $help to choose a Work This Way card."

@@ -34,12 +34,16 @@ codex plugin marketplace add control-decks/work-this-way
 codex plugin add work-this-way@work-this-way
 ```
 
+Use `$work-this-way:help` or play `$work-this-way:read-only`.
+
 ### Claude Code
 
 ```bash
 claude plugin marketplace add control-decks/work-this-way --scope user
 claude plugin install work-this-way@work-this-way --scope user
 ```
+
+Use `/work-this-way:help` or play `/work-this-way:read-only`.
 
 ## The deck
 
