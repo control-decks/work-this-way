@@ -17,6 +17,9 @@
     "developerName": "Control Decks",
     "category": "Productivity",
     "capabilities": ["Session controls", "Mutation approval", "Local-only work", "Implementation"],
+    "brandColor": "#D08A3E",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
     "defaultPrompt": [
       "$work-this-way:help Help me choose a work card.",
       "$work-this-way:read-only Keep this work read-only.",

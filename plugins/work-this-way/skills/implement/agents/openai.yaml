@@ -1,4 +1,6 @@
 interface:
   display_name: "Work This Way · Implement"
   short_description: "Execute the current actionable direction"
+  icon_small: "assets/icon.png"
+  brand_color: "#D08A3E"
   default_prompt: "Use $implement to execute the current actionable direction."
