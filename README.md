@@ -38,7 +38,7 @@ codex plugin add work-this-way@work-this-way
 
 ```bash
 claude plugin marketplace add control-decks/work-this-way --scope user
-claude plugin install work-this-way@control-decks-work-this-way --scope user
+claude plugin install work-this-way@work-this-way --scope user
 ```
 
 ## The deck
