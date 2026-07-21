@@ -4,3 +4,5 @@ interface:
   icon_small: "assets/icon.png"
   brand_color: "#D08A3E"
   default_prompt: "Use $help to choose a Work This Way card."
+policy:
+  allow_implicit_invocation: false

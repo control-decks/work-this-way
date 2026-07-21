@@ -1,6 +1,6 @@
 {
-  "hacp": "0.3",
-  "deck": {"id": "work-this-way", "version": "0.2.0", "publisher": "Control Decks"},
+  "hacp": "0.4",
+  "deck": {"id": "work-this-way", "version": "0.3.0", "publisher": "Control Decks"},
   "cards": [
     {
       "id": "work-this-way/read-only",
@@ -12,7 +12,7 @@
       "accepts": ["hacp/content", "hacp/result"],
       "produces": "work-this-way/control-state",
       "duration": "until-clear",
-      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/clear"], "blocksTraits": ["mutation"]}
+      "relations": {"blocksTraits": ["mutation"]}
     },
     {
       "id": "work-this-way/ask-first",
@@ -24,7 +24,7 @@
       "accepts": ["hacp/content", "hacp/result"],
       "produces": "work-this-way/control-state",
       "duration": "until-clear",
-      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/clear"], "gatesTraits": ["mutation"]}
+      "relations": {"gatesTraits": ["mutation"]}
     },
     {
       "id": "work-this-way/local-only",
@@ -36,7 +36,7 @@
       "accepts": ["hacp/content", "hacp/result"],
       "produces": "work-this-way/control-state",
       "duration": "until-clear",
-      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/clear"], "blocksTraits": ["external-access"]}
+      "relations": {"blocksTraits": ["external-access"]}
     },
     {
       "id": "work-this-way/evidence-required",
@@ -48,7 +48,7 @@
       "accepts": ["hacp/content", "hacp/result"],
       "produces": "work-this-way/control-state",
       "duration": "until-clear",
-      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/clear"], "acceptsTraits": ["evidence-annotation"]}
+      "relations": {"requiresAnnotationTraits": ["evidence"]}
     },
     {
       "id": "work-this-way/once",
@@ -82,9 +82,10 @@
       "traits": ["mutation"],
       "defaultBinding": "current-action-or-plan",
       "accepts": ["hacp/content", "hacp/result"],
+      "requires": ["hacp/actionable-direction", "hacp/user-authorized-scope"],
       "produces": "work-this-way/implementation-result",
       "duration": "once",
-      "relations": {"blockedByTraits": ["mutation-guard", "external-access-guard", "evidence-gate"], "presentedBy": ["think-it-through/explain"]}
+      "relations": {"blockedByTraits": ["mutation-guard", "external-access-guard", "evidence-gate"]}
     }
   ]
 }

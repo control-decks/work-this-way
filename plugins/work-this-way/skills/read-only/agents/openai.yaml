@@ -4,3 +4,5 @@ interface:
   icon_small: "assets/icon.png"
   brand_color: "#D08A3E"
   default_prompt: "Use $read-only to keep this session read-only."
+policy:
+  allow_implicit_invocation: false

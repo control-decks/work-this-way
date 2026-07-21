@@ -1,6 +1,7 @@
 ---
 name: help
 description: Explain Work This Way, clarify one of its cards or active controls, or recommend normal conversation, one card, or a short combo. Use only when the user invokes help or explicitly asks how to use the deck. Never activate a recommended control.
+disable-model-invocation: true
 ---
 
 # 🛠 Work Help
