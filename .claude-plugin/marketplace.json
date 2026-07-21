@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
-  "name": "control-decks-work-this-way",
+  "name": "work-this-way",
   "version": "0.1.0",
   "owner": {"name": "Control Decks", "url": "https://github.com/control-decks"},
   "metadata": {"description": "The Work This Way deck for Claude Code."},
