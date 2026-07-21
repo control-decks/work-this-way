@@ -1,14 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "work-this-way",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "owner": {"name": "Control Decks", "url": "https://github.com/control-decks"},
   "metadata": {"description": "The Work This Way deck for Claude Code."},
   "plugins": [{
     "name": "work-this-way",
     "source": "./plugins/work-this-way",
     "description": "Visible, composable controls for agent work.",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "author": {"name": "thevzion"},
     "category": "productivity",
     "homepage": "https://github.com/control-decks/work-this-way"

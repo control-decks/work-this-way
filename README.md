@@ -27,9 +27,14 @@ The blocked result remains a valid Working Object, so safe cards from another de
 
 ## Install
 
+Install the HACP session adapter once, then the deck. Without a compatible
+adapter the commands may appear, but the session is not fully HACP-conforming.
+
 ### Codex
 
 ```bash
+codex plugin marketplace add control-decks/human-agent-control-protocol
+codex plugin add hacp@hacp
 codex plugin marketplace add control-decks/work-this-way
 codex plugin add work-this-way@work-this-way
 ```
@@ -39,6 +44,8 @@ Use `$work-this-way:help` or play `$work-this-way:read-only`.
 ### Claude Code
 
 ```bash
+claude plugin marketplace add control-decks/human-agent-control-protocol --scope user
+claude plugin install hacp@hacp --scope user
 claude plugin marketplace add control-decks/work-this-way --scope user
 claude plugin install work-this-way@work-this-way --scope user
 ```
@@ -95,7 +102,7 @@ All Work controls are removed before the action. State from other decks stays in
 
 ## HACP
 
-Work This Way implements [HACP Draft 0.3](https://github.com/control-decks/human-agent-control-protocol): **Cards are the interface. Control is the protocol.** Its cards can receive and pass the same Working Object as any compatible deck.
+Work This Way implements [HACP Draft 0.4](https://github.com/control-decks/human-agent-control-protocol): **Cards are the interface. Control is the protocol.** The HACP adapter supplies ordered resolution; each Work card contains only its own effect and open semantic relations. Cards are explicit human commands and cannot be inferred or replayed by the agent.
 
 This is a semantic protocol, not a technical sandbox or permission system.
 

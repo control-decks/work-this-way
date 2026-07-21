@@ -1,29 +1,39 @@
 ---
 name: implement
 description: Execute an explicit actionable request or the accepted or explicitly provisional current plan under all active controls. Use only when the user invokes IMPLEMENT or explicitly asks to implement the current actionable direction.
+disable-model-invocation: true
 ---
 
 # ⚙️ Implement
 
-**Kind:** operation  
-**Mode:** action  
-**Traits:** mutation  
-**Default binding:** Explicit action request, otherwise the accepted or provisional current plan  
-**Accepts:** `hacp/content` or `hacp/result`
-**Produces:** `work-this-way/implementation-result`  
+**ID:** `work-this-way/implement`\
+**HACP:** `0.4`\
+**Kind:** `operation`\
+**Mode:** `action`\
+**Traits:** `mutation`\
+**Default Binding:** Explicit action request, otherwise accepted or provisional
+current plan\
+**Accepts:** `hacp/content`, `hacp/result`\
+**Requires:** `hacp/actionable-direction`, `hacp/user-authorized-scope`\
+**Produces:** `work-this-way/implementation-result`\
 **Duration:** `once`
+
+**Effect:** Execute only the authorized actionable direction under every active
+control, then return the observed result.
 
 ## Resolve the operation
 
-1. Resolve the binding. If no concrete action or accepted or provisional plan exists, ask for scope and return `pending` without guessing.
+1. Resolve the Binding. If no concrete action or accepted or provisional plan exists, ask for scope and return `pending` without guessing.
 2. Preflight the entire combo and all active controls before the first mutation.
-3. Under `READ ONLY`, return `blocked` without mutating.
-4. Under `ASK FIRST`, describe the mutation batch, return `pending`, and resume here after approval.
-5. Under `LOCAL ONLY`, exclude external access and block the operation if the requested result requires it.
-6. Under `EVIDENCE REQUIRED`, require compatible evidence before dependent changes.
+3. If an active control blocks `mutation`, return `blocked` without mutating.
+4. If an active control gates `mutation`, describe the mutation batch, return `pending`, and resume here after approval.
+5. If an active control blocks `external-access`, use an allowed local path or return `blocked` when none can satisfy the request.
+6. If an active control requires evidence, use only compatible scoped evidence annotations before dependent changes.
 7. Execute only the authorized, feasible scope. Verify the result in proportion to risk.
 
-Return the real implementation result as the Working Object. If a later presentation card such as `think-it-through/explain` follows, pass that object without printing a duplicate intermediate report.
+Return the observed implementation result as the Working Object. When a later
+presentation follows, pass the object without printing a duplicate intermediate
+report.
 
 ## Limits
 

@@ -4,3 +4,5 @@ interface:
   icon_small: "assets/icon.png"
   brand_color: "#D08A3E"
   default_prompt: "Use $local-only to keep governed work local."
+policy:
+  allow_implicit_invocation: false

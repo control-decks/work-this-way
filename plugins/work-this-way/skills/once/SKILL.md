@@ -1,17 +1,20 @@
 ---
 name: once
 description: Qualify Work This Way controls activated in the same combo so they expire after one completed governed turn. Use only when the user invokes ONCE together with at least one activatable Work This Way control.
+disable-model-invocation: true
 ---
 
 # 1️⃣ Once
 
-**Kind:** control  
-**Mode:** qualify  
-**Traits:** duration-qualifier  
-**Default binding:** Controls activated in the same combo  
-**Accepts:** `work-this-way/control-state`  
-**Produces:** `work-this-way/control-state`  
-**Duration:** `one-turn`
+**ID:** `work-this-way/once`\
+**HACP:** `0.4`\
+**Kind:** `control`\
+**Mode:** `qualify`\
+**Traits:** `duration-qualifier`\
+**Default Binding:** Controls activated in the same combo\
+**Accepts:** `work-this-way/control-state`\
+**Produces:** `work-this-way/control-state`\
+**Duration:** `once`
 
 ## Effect
 
