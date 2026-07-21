@@ -1,0 +1,4 @@
+interface:
+  display_name: "Work This Way · Once"
+  short_description: "Limit new controls to one completed turn"
+  default_prompt: "Use $once to limit controls in this combo to one completed turn."

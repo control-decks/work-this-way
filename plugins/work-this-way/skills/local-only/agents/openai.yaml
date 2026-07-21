@@ -1,0 +1,4 @@
+interface:
+  display_name: "Work This Way · Local Only"
+  short_description: "Keep governed work on local resources"
+  default_prompt: "Use $local-only to keep governed work local."

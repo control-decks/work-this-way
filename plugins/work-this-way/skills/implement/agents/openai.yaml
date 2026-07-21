@@ -1,0 +1,4 @@
+interface:
+  display_name: "Work This Way · Implement"
+  short_description: "Execute the current actionable direction"
+  default_prompt: "Use $implement to execute the current actionable direction."

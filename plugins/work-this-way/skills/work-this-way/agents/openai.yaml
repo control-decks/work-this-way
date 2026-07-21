@@ -1,4 +1,0 @@
-interface:
-  display_name: "Work This Way"
-  short_description: "Apply visible session work controls"
-  default_prompt: "Use $work-this-way to initialize the work-control deck."

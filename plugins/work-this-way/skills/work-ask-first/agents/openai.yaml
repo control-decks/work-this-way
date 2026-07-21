@@ -1,4 +1,0 @@
-interface:
-  display_name: "Ask First"
-  short_description: "Require approval before mutation"
-  default_prompt: "Use $work-ask-first before any mutation."

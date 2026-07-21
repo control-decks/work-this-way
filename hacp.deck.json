@@ -1,10 +1,10 @@
 {
   "hacp": "0.3",
-  "deck": {"id": "work-this-way", "version": "0.1.0", "publisher": "Control Decks"},
+  "deck": {"id": "work-this-way", "version": "0.2.0", "publisher": "Control Decks"},
   "cards": [
     {
       "id": "work-this-way/read-only",
-      "command": "work-read-only",
+      "command": "read-only",
       "kind": "control",
       "mode": "guard",
       "traits": ["session-control", "refusal", "mutation-guard"],
@@ -12,11 +12,11 @@
       "accepts": ["hacp/content", "hacp/result"],
       "produces": "work-this-way/control-state",
       "duration": "until-clear",
-      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/work-clear"], "blocksTraits": ["mutation"]}
+      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/clear"], "blocksTraits": ["mutation"]}
     },
     {
       "id": "work-this-way/ask-first",
-      "command": "work-ask-first",
+      "command": "ask-first",
       "kind": "control",
       "mode": "guard",
       "traits": ["session-control", "approval-gate", "mutation-guard"],
@@ -24,11 +24,11 @@
       "accepts": ["hacp/content", "hacp/result"],
       "produces": "work-this-way/control-state",
       "duration": "until-clear",
-      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/work-clear"], "gatesTraits": ["mutation"]}
+      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/clear"], "gatesTraits": ["mutation"]}
     },
     {
       "id": "work-this-way/local-only",
-      "command": "work-local-only",
+      "command": "local-only",
       "kind": "control",
       "mode": "guard",
       "traits": ["session-control", "refusal", "external-access-guard"],
@@ -36,11 +36,11 @@
       "accepts": ["hacp/content", "hacp/result"],
       "produces": "work-this-way/control-state",
       "duration": "until-clear",
-      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/work-clear"], "blocksTraits": ["external-access"]}
+      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/clear"], "blocksTraits": ["external-access"]}
     },
     {
       "id": "work-this-way/evidence-required",
-      "command": "work-evidence-required",
+      "command": "evidence-required",
       "kind": "control",
       "mode": "guard",
       "traits": ["session-control", "evidence-gate"],
@@ -48,11 +48,11 @@
       "accepts": ["hacp/content", "hacp/result"],
       "produces": "work-this-way/control-state",
       "duration": "until-clear",
-      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/work-clear"], "acceptsTraits": ["evidence-annotation"]}
+      "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/clear"], "acceptsTraits": ["evidence-annotation"]}
     },
     {
       "id": "work-this-way/once",
-      "command": "work-once",
+      "command": "once",
       "kind": "control",
       "mode": "qualify",
       "traits": ["duration-qualifier"],
@@ -63,8 +63,8 @@
       "relations": {"qualifiesTraits": ["session-control"], "setsDuration": "one-turn"}
     },
     {
-      "id": "work-this-way/work-clear",
-      "command": "work-clear",
+      "id": "work-this-way/clear",
+      "command": "clear",
       "kind": "control",
       "mode": "clear",
       "traits": ["deck-clear", "mutation-safe"],
@@ -76,7 +76,7 @@
     },
     {
       "id": "work-this-way/implement",
-      "command": "work-implement",
+      "command": "implement",
       "kind": "operation",
       "mode": "action",
       "traits": ["mutation"],
