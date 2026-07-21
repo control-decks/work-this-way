@@ -11,7 +11,7 @@ description: Clear every active Work This Way control while preserving controls,
 **Default binding:** Current Work This Way control state  
 **Accepts:** Any HACP Working Object  
 **Produces:** `work-this-way/control-state`  
-**Duration:** `one-shot`
+**Duration:** `once`
 
 ## Effect
 

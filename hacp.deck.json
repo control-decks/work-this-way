@@ -9,8 +9,8 @@
       "mode": "guard",
       "traits": ["session-control", "refusal", "mutation-guard"],
       "defaultBinding": "session",
-      "accepts": ["*"],
-      "produces": ["work-this-way/control-state", "blocked"],
+      "accepts": ["hacp/content", "hacp/result"],
+      "produces": "work-this-way/control-state",
       "duration": "until-clear",
       "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/work-clear"], "blocksTraits": ["mutation"]}
     },
@@ -21,8 +21,8 @@
       "mode": "guard",
       "traits": ["session-control", "approval-gate", "mutation-guard"],
       "defaultBinding": "session",
-      "accepts": ["*"],
-      "produces": ["work-this-way/control-state", "pending"],
+      "accepts": ["hacp/content", "hacp/result"],
+      "produces": "work-this-way/control-state",
       "duration": "until-clear",
       "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/work-clear"], "gatesTraits": ["mutation"]}
     },
@@ -33,8 +33,8 @@
       "mode": "guard",
       "traits": ["session-control", "refusal", "external-access-guard"],
       "defaultBinding": "session",
-      "accepts": ["*"],
-      "produces": ["work-this-way/control-state", "blocked"],
+      "accepts": ["hacp/content", "hacp/result"],
+      "produces": "work-this-way/control-state",
       "duration": "until-clear",
       "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/work-clear"], "blocksTraits": ["external-access"]}
     },
@@ -45,8 +45,8 @@
       "mode": "guard",
       "traits": ["session-control", "evidence-gate"],
       "defaultBinding": "session",
-      "accepts": ["*"],
-      "produces": ["work-this-way/control-state", "blocked"],
+      "accepts": ["hacp/content", "hacp/result"],
+      "produces": "work-this-way/control-state",
       "duration": "until-clear",
       "relations": {"qualifiers": ["work-this-way/once"], "clearedBy": ["work-this-way/work-clear"], "acceptsTraits": ["evidence-annotation"]}
     },
@@ -58,8 +58,8 @@
       "traits": ["duration-qualifier"],
       "defaultBinding": "same-combo-controls",
       "accepts": ["work-this-way/control-state"],
-      "produces": ["work-this-way/control-state"],
-      "duration": "one-shot",
+      "produces": "work-this-way/control-state",
+      "duration": "once",
       "relations": {"qualifiesTraits": ["session-control"], "setsDuration": "one-turn"}
     },
     {
@@ -69,9 +69,9 @@
       "mode": "clear",
       "traits": ["deck-clear", "mutation-safe"],
       "defaultBinding": "work-this-way/control-state",
-      "accepts": ["*"],
-      "produces": ["work-this-way/control-state"],
-      "duration": "one-shot",
+      "accepts": ["hacp/content", "hacp/result"],
+      "produces": "work-this-way/control-state",
+      "duration": "once",
       "relations": {"clearsDeck": "work-this-way"}
     },
     {
@@ -81,9 +81,9 @@
       "mode": "action",
       "traits": ["mutation"],
       "defaultBinding": "current-action-or-plan",
-      "accepts": ["content", "think-it-through/plan", "reality-check/annotated"],
-      "produces": ["work-this-way/implementation-result"],
-      "duration": "one-shot",
+      "accepts": ["hacp/content", "hacp/result"],
+      "produces": "work-this-way/implementation-result",
+      "duration": "once",
       "relations": {"blockedByTraits": ["mutation-guard", "external-access-guard", "evidence-gate"], "presentedBy": ["think-it-through/explain"]}
     }
   ]

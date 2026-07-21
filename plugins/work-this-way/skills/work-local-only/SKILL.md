@@ -10,7 +10,8 @@ description: Restrict governed work to local resources and block network, connec
 **Traits:** refusal, external-access-guard  
 **Default binding:** Current session  
 **Accepts:** Any HACP Working Object  
-**Produces:** `work-this-way/control-state` or a transferable blocked object  
+**Produces:** `work-this-way/control-state`; a governed operation may return
+`blocked` while preserving its object
 **Duration:** `until-clear`; `one-turn` with `work-this-way/once`
 
 ## Effect

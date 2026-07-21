@@ -10,7 +10,8 @@ description: Require explicit approval before each described batch of mutations,
 **Traits:** approval-gate, mutation-guard  
 **Default binding:** Current session  
 **Accepts:** Any HACP Working Object  
-**Produces:** `work-this-way/control-state` or a pending Working Object  
+**Produces:** `work-this-way/control-state`; a governed mutation may become
+`pending` while preserving its object
 **Duration:** `until-clear`; `one-turn` with `work-this-way/once`
 
 ## Effect

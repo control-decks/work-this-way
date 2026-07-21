@@ -9,9 +9,9 @@ description: Execute an explicit actionable request or the accepted or explicitl
 **Mode:** action  
 **Traits:** mutation  
 **Default binding:** Explicit action request, otherwise the accepted or provisional current plan  
-**Accepts:** `content`, `think-it-through/plan`, `reality-check/annotated`  
+**Accepts:** `hacp/content` or `hacp/result`
 **Produces:** `work-this-way/implementation-result`  
-**Duration:** `one-shot`
+**Duration:** `once`
 
 ## Resolve the operation
 

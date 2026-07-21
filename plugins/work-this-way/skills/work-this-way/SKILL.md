@@ -32,9 +32,11 @@ Source: slug of the last card
 
 ## Active controls
 
-- `READ ONLY` blocks every operation with the `mutation` trait.
+- `READ ONLY` blocks every operation with the `mutation` trait and every
+  concrete mutating effect or tool call.
 - `ASK FIRST` suspends each described mutation batch for approval. A changed scope, target set, or external effect requires a new approval.
-- `LOCAL ONLY` blocks access to or mutation of non-local resources.
+- `LOCAL ONLY` blocks access to or mutation of non-local resources while
+  allowing cards to continue through a valid local-only path.
 - `EVIDENCE REQUIRED` blocks dependent work until the needed evidence is present.
 - A strong refusal always outranks approval.
 - Controls last until `WORK CLEAR` by default. `ONCE` changes only controls activated in the same combo to one completed governed turn.

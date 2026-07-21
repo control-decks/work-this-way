@@ -37,8 +37,8 @@ codex plugin add work-this-way@work-this-way
 ### Claude Code
 
 ```bash
-/plugin marketplace add control-decks/work-this-way
-/plugin install work-this-way@control-decks-work-this-way
+claude plugin marketplace add control-decks/work-this-way --scope user
+claude plugin install work-this-way@control-decks-work-this-way --scope user
 ```
 
 ## The deck
@@ -50,8 +50,8 @@ codex plugin add work-this-way@work-this-way
 | `LOCAL ONLY` | Keeps governed work on local resources | Until clear |
 | `EVIDENCE REQUIRED` | Requires evidence before dependent work | Until clear |
 | `ONCE` | Limits controls in the same combo | One completed turn |
-| `WORK CLEAR` | Clears all Work This Way controls | One shot |
-| `IMPLEMENT` | Executes the current actionable direction | One shot |
+| `WORK CLEAR` | Clears all Work This Way controls | One resolution |
+| `IMPLEMENT` | Executes the current actionable direction | One resolution |
 
 ## Combos
 
@@ -91,7 +91,7 @@ All Work controls are removed before the action. State from other decks stays in
 
 ## HACP
 
-Work This Way implements [HACP Draft 0.3](https://github.com/control-decks/human-agent-card-protocol): **Cards are the interface. Control is the protocol.** Its cards can receive and pass the same Working Object as any compatible deck.
+Work This Way implements [HACP Draft 0.3](https://github.com/control-decks/human-agent-control-protocol): **Cards are the interface. Control is the protocol.** Its cards can receive and pass the same Working Object as any compatible deck.
 
 This is a semantic protocol, not a technical sandbox or permission system.
 
@@ -99,6 +99,6 @@ This is a semantic protocol, not a technical sandbox or permission system.
 
 - Canonical card metadata: [`hacp.deck.json`](hacp.deck.json)
 - Provider-independent behavior: [`plugins/work-this-way/skills`](plugins/work-this-way/skills)
-- Protocol: [Human-Agent Control Protocol](https://github.com/control-decks/human-agent-card-protocol)
+- Protocol: [Human-Agent Control Protocol](https://github.com/control-decks/human-agent-control-protocol)
 
 MIT © thevzion · Published by Control Decks
